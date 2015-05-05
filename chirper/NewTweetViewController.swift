@@ -26,6 +26,8 @@ class NewTweetViewController: UIViewController {
             }
             
         }
+        
+        tweetTextField.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }

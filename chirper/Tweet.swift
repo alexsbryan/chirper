@@ -25,10 +25,12 @@ class Tweet: NSObject {
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
         createdAt = formatter.dateFromString(createdAtString!)
         
-        let ago = Int(createdAt!.timeIntervalSinceNow / (60*60)) * -1
+        let ago = Int(createdAt!.timeIntervalSinceNow / (60)) * -1
         
-        if ago < 24 {
-            createdAtString = "\(ago)h"
+        if ago < (60) {
+            createdAtString = "\(ago)m"
+        } else if ago < (60*24) {
+            createdAtString = "\(ago/60)h"
         } else {
             formatter.dateFormat = "MM/dd/yyyy"
             createdAtString = formatter.stringFromDate(createdAt!)
