@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4126636E3B2C425E514C1D19 /* libPods-chirper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60192958F0101AAC79B093FE /* libPods-chirper.a */; };
 		FCAE09111AF57B160086F5DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09101AF57B160086F5DC /* AppDelegate.swift */; };
 		FCAE09131AF57B160086F5DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09121AF57B160086F5DC /* ViewController.swift */; };
 		FCAE09161AF57B160086F5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCAE09141AF57B160086F5DC /* Main.storyboard */; };
 		FCAE09181AF57B160086F5DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCAE09171AF57B160086F5DC /* Images.xcassets */; };
 		FCAE091B1AF57B160086F5DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCAE09191AF57B160086F5DC /* LaunchScreen.xib */; };
 		FCAE09271AF57B160086F5DC /* chirperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09261AF57B160086F5DC /* chirperTests.swift */; };
+		FCAE09351AF57CC10086F5DC /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09341AF57CC10086F5DC /* TwitterClient.swift */; };
+		FCAE09381AF59D4A0086F5DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09371AF59D4A0086F5DC /* User.swift */; };
+		FCAE093A1AF59D520086F5DC /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09391AF59D520086F5DC /* Tweet.swift */; };
+		FCAE093C1AF5B1290086F5DC /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60192958F0101AAC79B093FE /* libPods-chirper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chirper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81DEE3F5BDDDDC114AA6E65C /* Pods-chirper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chirper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chirper/Pods-chirper.debug.xcconfig"; sourceTree = "<group>"; };
+		C2B16B9CFF051A5C5C57B9BF /* Pods-chirper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chirper.release.xcconfig"; path = "Pods/Target Support Files/Pods-chirper/Pods-chirper.release.xcconfig"; sourceTree = "<group>"; };
 		FCAE090B1AF57B160086F5DC /* chirper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chirper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAE090F1AF57B160086F5DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCAE09101AF57B160086F5DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +44,11 @@
 		FCAE09201AF57B160086F5DC /* chirperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chirperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAE09251AF57B160086F5DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCAE09261AF57B160086F5DC /* chirperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chirperTests.swift; sourceTree = "<group>"; };
+		FCAE09301AF57C580086F5DC /* chirper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chirper-Bridging-Header.h"; sourceTree = "<group>"; };
+		FCAE09341AF57CC10086F5DC /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		FCAE09371AF59D4A0086F5DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FCAE09391AF59D520086F5DC /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4126636E3B2C425E514C1D19 /* libPods-chirper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +70,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		238E7147749590727D187DFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81DEE3F5BDDDDC114AA6E65C /* Pods-chirper.debug.xcconfig */,
+				C2B16B9CFF051A5C5C57B9BF /* Pods-chirper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		52618263F01179073FD41C4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60192958F0101AAC79B093FE /* libPods-chirper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FCAE09021AF57B160086F5DC = {
 			isa = PBXGroup;
 			children = (
 				FCAE090D1AF57B160086F5DC /* chirper */,
 				FCAE09231AF57B160086F5DC /* chirperTests */,
 				FCAE090C1AF57B160086F5DC /* Products */,
+				238E7147749590727D187DFC /* Pods */,
+				52618263F01179073FD41C4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +110,16 @@
 		FCAE090D1AF57B160086F5DC /* chirper */ = {
 			isa = PBXGroup;
 			children = (
+				FCAE09361AF59D1C0086F5DC /* Models */,
+				FCAE09331AF57C8A0086F5DC /* API */,
 				FCAE09101AF57B160086F5DC /* AppDelegate.swift */,
 				FCAE09121AF57B160086F5DC /* ViewController.swift */,
 				FCAE09141AF57B160086F5DC /* Main.storyboard */,
 				FCAE09171AF57B160086F5DC /* Images.xcassets */,
 				FCAE09191AF57B160086F5DC /* LaunchScreen.xib */,
 				FCAE090E1AF57B160086F5DC /* Supporting Files */,
+				FCAE09301AF57C580086F5DC /* chirper-Bridging-Header.h */,
+				FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */,
 			);
 			path = chirper;
 			sourceTree = "<group>";
@@ -112,6 +149,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FCAE09331AF57C8A0086F5DC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE09341AF57CC10086F5DC /* TwitterClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		FCAE09361AF59D1C0086F5DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE09371AF59D4A0086F5DC /* User.swift */,
+				FCAE09391AF59D520086F5DC /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCAE092A1AF57B160086F5DC /* Build configuration list for PBXNativeTarget "chirper" */;
 			buildPhases = (
+				19877D1B1975C1BB12546D1E /* Check Pods Manifest.lock */,
 				FCAE09071AF57B160086F5DC /* Sources */,
 				FCAE09081AF57B160086F5DC /* Frameworks */,
 				FCAE09091AF57B160086F5DC /* Resources */,
+				04B09A12817EA6069E12C57F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,12 +263,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04B09A12817EA6069E12C57F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chirper/Pods-chirper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19877D1B1975C1BB12546D1E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FCAE09071AF57B160086F5DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCAE09381AF59D4A0086F5DC /* User.swift in Sources */,
+				FCAE093A1AF59D520086F5DC /* Tweet.swift in Sources */,
+				FCAE093C1AF5B1290086F5DC /* TweetsViewController.swift in Sources */,
 				FCAE09131AF57B160086F5DC /* ViewController.swift in Sources */,
+				FCAE09351AF57CC10086F5DC /* TwitterClient.swift in Sources */,
 				FCAE09111AF57B160086F5DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,21 +431,28 @@
 		};
 		FCAE092B1AF57B160086F5DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81DEE3F5BDDDDC114AA6E65C /* Pods-chirper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = chirper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chirper/chirper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		FCAE092C1AF57B160086F5DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2B16B9CFF051A5C5C57B9BF /* Pods-chirper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = chirper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chirper/chirper-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +509,7 @@
 				FCAE092C1AF57B160086F5DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCAE092D1AF57B160086F5DC /* Build configuration list for PBXNativeTarget "chirperTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +518,7 @@
 				FCAE092F1AF57B160086F5DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
