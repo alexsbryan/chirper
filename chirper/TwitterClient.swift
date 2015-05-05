@@ -77,4 +77,35 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         
     }
     
+    func postTweet(tweetText: String, inReplyToIdStr: String="", complete:(()->())?=nil) {
+        let params = ["status": tweetText, "in_reply_to_status_id": inReplyToIdStr]
+        let urlString = "1.1/statuses/update.json"
+        POST(urlString, parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println("postTweet: success")
+            complete?()
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("postTweet: error")
+                complete?()
+        }
+    }
+    
+    func favoriteTweet(tweetIdStr: String) {
+        let params = ["id": tweetIdStr]
+        let urlString = "https://api.twitter.com/1.1/favorites/create.json"
+        POST(urlString, parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println("favoriteTweet: success")
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("favoriteTweet: error")
+        }
+    }
+    
+    func retweetTweet(tweetIdStr: String) {
+        let urlString = "https://api.twitter.com/1.1/statuses/retweet/\(tweetIdStr).json"
+        POST(urlString, parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println("retweetTweet: success")
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("retweetTweet: error: \(error)")
+        }
+    }
+    
 }

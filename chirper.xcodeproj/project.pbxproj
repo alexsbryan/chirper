@@ -18,6 +18,9 @@
 		FCAE09381AF59D4A0086F5DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09371AF59D4A0086F5DC /* User.swift */; };
 		FCAE093A1AF59D520086F5DC /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE09391AF59D520086F5DC /* Tweet.swift */; };
 		FCAE093C1AF5B1290086F5DC /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */; };
+		FCC1864A1AF86E81005A63E4 /* TweetRowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC186491AF86E81005A63E4 /* TweetRowTableCell.swift */; };
+		FCC1864D1AF88391005A63E4 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1864C1AF88391005A63E4 /* TweetViewController.swift */; };
+		FCC1864F1AF885BD005A63E4 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		FCAE09371AF59D4A0086F5DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCAE09391AF59D520086F5DC /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
+		FCC186491AF86E81005A63E4 /* TweetRowTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetRowTableCell.swift; sourceTree = "<group>"; };
+		FCC1864C1AF88391005A63E4 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,8 @@
 		FCAE090D1AF57B160086F5DC /* chirper */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1864B1AF88373005A63E4 /* VCs */,
+				FCC186481AF86E46005A63E4 /* Views */,
 				FCAE09361AF59D1C0086F5DC /* Models */,
 				FCAE09331AF57C8A0086F5DC /* API */,
 				FCAE09101AF57B160086F5DC /* AppDelegate.swift */,
@@ -119,7 +127,6 @@
 				FCAE09191AF57B160086F5DC /* LaunchScreen.xib */,
 				FCAE090E1AF57B160086F5DC /* Supporting Files */,
 				FCAE09301AF57C580086F5DC /* chirper-Bridging-Header.h */,
-				FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */,
 			);
 			path = chirper;
 			sourceTree = "<group>";
@@ -164,6 +171,24 @@
 				FCAE09391AF59D520086F5DC /* Tweet.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FCC186481AF86E46005A63E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCC186491AF86E81005A63E4 /* TweetRowTableCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FCC1864B1AF88373005A63E4 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */,
+				FCC1864C1AF88391005A63E4 /* TweetViewController.swift */,
+				FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */,
+			);
+			name = VCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,10 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCAE09381AF59D4A0086F5DC /* User.swift in Sources */,
+				FCC1864A1AF86E81005A63E4 /* TweetRowTableCell.swift in Sources */,
 				FCAE093A1AF59D520086F5DC /* Tweet.swift in Sources */,
 				FCAE093C1AF5B1290086F5DC /* TweetsViewController.swift in Sources */,
+				FCC1864D1AF88391005A63E4 /* TweetViewController.swift in Sources */,
 				FCAE09131AF57B160086F5DC /* ViewController.swift in Sources */,
 				FCAE09351AF57CC10086F5DC /* TwitterClient.swift in Sources */,
+				FCC1864F1AF885BD005A63E4 /* NewTweetViewController.swift in Sources */,
 				FCAE09111AF57B160086F5DC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
