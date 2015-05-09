@@ -14,6 +14,12 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     var refreshControl = UIRefreshControl()
     
+    var hamburgerOpenX: CGFloat?
+    var hamburgerCloseX = CGFloat(0.0)
+    var hamburgerOpen = false
+    
+    @IBOutlet weak var hamburgerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +30,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
-        self.onRefresh()
-        
         self.refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         
         self.tableView.insertSubview(self.refreshControl, atIndex: 0)
+        
+        hamburgerOpenX = hamburgerView.frame.width
+        //position hamburger offscreen
+        hamburgerView.frame.origin.x = (-1.0 * hamburgerView.frame.width)
+        self.onRefresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +73,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
             self.tableView.reloadData()
+
             if self.refreshControl.refreshing {
                 self.refreshControl.endRefreshing()
             }
@@ -98,5 +108,37 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
 
+    @IBAction func onViewPanGesture(sender: AnyObject) {
+        var point = sender.locationInView(view)
+        var velocity = sender.velocityInView(view)
+        var translation = sender.translationInView(view)
+        
+        if sender.state == .Began {
+        } else if sender.state == .Changed {
+            if translation.x > 0.0 {
+                var boundedXTranslation = min(translation.x, hamburgerOpenX!)
+                self.hamburgerView.frame.origin.x = (-1.0 * hamburgerView.frame.width) + boundedXTranslation
+            
+                self.tableView.frame.origin.x = boundedXTranslation
+            } else if self.hamburgerOpen {
+                var boundedXTranslation = max(translation.x, (-1 * hamburgerOpenX!))
+                println("bounded X trans \(boundedXTranslation)")
+                self.hamburgerView.frame.origin.x = boundedXTranslation
+                println("table view x \(boundedXTranslation)")
+                self.tableView.frame.origin.x = self.hamburgerView.frame.width + boundedXTranslation
+            }
+        } else if sender.state == .Ended {
+            if translation.x > 0.0 {
+                self.hamburgerView.frame.origin.x = 0.0
+                self.tableView.frame.origin.x = self.hamburgerOpenX!
+                self.hamburgerOpen = true
+            } else if self.hamburgerOpen {
+                self.hamburgerView.frame.origin.x = -1 * self.hamburgerOpenX!
+                self.tableView.frame.origin.x = 0.0
+                self.hamburgerOpen = false
+            }
+        }
+        
+    }
 
 }
