@@ -19,6 +19,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var hamburgerOpen = false
     
     @IBOutlet weak var hamburgerView: UIView!
+    @IBOutlet weak var navViewItem: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,21 +121,25 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.hamburgerView.frame.origin.x = (-1.0 * hamburgerView.frame.width) + boundedXTranslation
             
                 self.tableView.frame.origin.x = boundedXTranslation
+                self.navigationController!.navigationBar.frame.origin.x = boundedXTranslation
             } else if self.hamburgerOpen {
                 var boundedXTranslation = max(translation.x, (-1 * hamburgerOpenX!))
                 println("bounded X trans \(boundedXTranslation)")
                 self.hamburgerView.frame.origin.x = boundedXTranslation
                 println("table view x \(boundedXTranslation)")
                 self.tableView.frame.origin.x = self.hamburgerView.frame.width + boundedXTranslation
+                self.navigationController!.navigationBar.frame.origin.x = self.hamburgerView.frame.width + boundedXTranslation
             }
         } else if sender.state == .Ended {
             if translation.x > 0.0 {
                 self.hamburgerView.frame.origin.x = 0.0
                 self.tableView.frame.origin.x = self.hamburgerOpenX!
+                self.navigationController!.navigationBar.frame.origin.x = self.hamburgerOpenX!
                 self.hamburgerOpen = true
             } else if self.hamburgerOpen {
                 self.hamburgerView.frame.origin.x = -1 * self.hamburgerOpenX!
                 self.tableView.frame.origin.x = 0.0
+                self.navigationController!.navigationBar.frame.origin.x = 0.0
                 self.hamburgerOpen = false
             }
         }

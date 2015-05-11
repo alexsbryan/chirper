@@ -22,6 +22,7 @@
 		FCC1864D1AF88391005A63E4 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1864C1AF88391005A63E4 /* TweetViewController.swift */; };
 		FCC1864F1AF885BD005A63E4 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */; };
 		FCC186571AFE982F005A63E4 /* HamburgerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC186561AFE982F005A63E4 /* HamburgerTableView.swift */; };
+		FCC186591B002E78005A63E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC186581B002E78005A63E4 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FCC1864C1AF88391005A63E4 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
 		FCC186561AFE982F005A63E4 /* HamburgerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerTableView.swift; sourceTree = "<group>"; };
+		FCC186581B002E78005A63E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				FCAE093B1AF5B1290086F5DC /* TweetsViewController.swift */,
 				FCC1864C1AF88391005A63E4 /* TweetViewController.swift */,
 				FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */,
+				FCC186581B002E78005A63E4 /* ProfileViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				FCAE093C1AF5B1290086F5DC /* TweetsViewController.swift in Sources */,
 				FCC1864D1AF88391005A63E4 /* TweetViewController.swift in Sources */,
 				FCAE09131AF57B160086F5DC /* ViewController.swift in Sources */,
+				FCC186591B002E78005A63E4 /* ProfileViewController.swift in Sources */,
 				FCAE09351AF57CC10086F5DC /* TwitterClient.swift in Sources */,
 				FCC1864F1AF885BD005A63E4 /* NewTweetViewController.swift in Sources */,
 				FCAE09111AF57B160086F5DC /* AppDelegate.swift in Sources */,
