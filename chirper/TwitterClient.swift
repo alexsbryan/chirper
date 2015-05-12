@@ -37,7 +37,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     }
     
     func profileTimelineWithParams(params: NSDictionary?, completion: (tweets: [Tweet]?, error: NSError?) -> ()) {
-        GET("1.1/statuses/user_timeline.json", parameters: nil, success: { (operation:AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+        GET("1.1/statuses/user_timeline.json", parameters: params, success: { (operation:AFHTTPRequestOperation!, response: AnyObject!) -> Void in
 //            println("got timeline: \(response)")
             
             var tweets = Tweet.tweetsWithArray(response as! [NSDictionary])

@@ -29,30 +29,32 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         
-        TwitterClient.sharedInstance.profileTimelineWithParams(nil, completion: { (tweets, error) -> () in
+        if (self.user != nil) {
+            self.profileDictionary = self.user?.dictionary
+        } else {
+            self.user = _currentUser
+            self.profileDictionary = _currentUser?.dictionary
+        }
+        
+        var params = [String: String]()
+        params["screen_name"] = self.user?.screenname!
+        TwitterClient.sharedInstance.profileTimelineWithParams(params, completion: { (tweets, error) -> () in
             self.tweets = tweets
-            if (self.user != nil) {
-                self.profileDictionary = self.user?.dictionary
-            } else {
-                self.user = _currentUser
-                self.profileDictionary = _currentUser?.dictionary
-            }
             
             self.tweetCountLabel.text = (self.profileDictionary!["statuses_count"] as? NSNumber)?.stringValue
             self.followingCountLabel.text = (self.profileDictionary!["following"] as? NSNumber)?.stringValue
             self.followerCountLabel.text = (self.profileDictionary!["followers_count"] as? NSNumber)?.stringValue
-            println("Stufff stusafdasdf \(self.followerCountLabel.text)")
             self.nameLabel.text = self.user?.name
-            if let backgroundImage = self.profileDictionary!["profile_background_image_url"] {
+            if let backgroundImage = self.profileDictionary!["profile_banner_url"] {
                 self.backgroundImage.setImageWithURL(NSURL(string: backgroundImage as! String))
             }
             
-            if let pImage = _currentUser?.profileImageUrl {
+            if let pImage = self.user?.profileImageUrl {
                 self.profileImage.setImageWithURL(NSURL(string: pImage))
             }
             
             self.tableView.reloadData()
-            println("Current User \(_currentUser?.dictionary))")
+            println("\(self.user?.dictionary)")
         })
 
         // Do any additional setup after loading the view.

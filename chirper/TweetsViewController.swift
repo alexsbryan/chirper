@@ -106,7 +106,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             } else if (identifier == "newTweet") {
                 
             } else if (identifier == "imageToProfileSegue") {
-                let cell = sender as! TweetRowTableCell
+                //YUCK!!!
+                let cell = sender!.view?!.superview!.superview as! TweetRowTableCell
                 let indexPath = tableView.indexPathForCell(cell)!
                 
                 let user = tweets![indexPath.row].author
