@@ -23,6 +23,7 @@
 		FCC1864F1AF885BD005A63E4 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */; };
 		FCC186571AFE982F005A63E4 /* HamburgerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC186561AFE982F005A63E4 /* HamburgerTableView.swift */; };
 		FCC186591B002E78005A63E4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC186581B002E78005A63E4 /* ProfileViewController.swift */; };
+		FCC1865B1B017A00005A63E4 /* ProfileTweetRowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1865A1B017A00005A63E4 /* ProfileTweetRowTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FCC1864E1AF885BD005A63E4 /* NewTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
 		FCC186561AFE982F005A63E4 /* HamburgerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerTableView.swift; sourceTree = "<group>"; };
 		FCC186581B002E78005A63E4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FCC1865A1B017A00005A63E4 /* ProfileTweetRowTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTweetRowTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				FCC186491AF86E81005A63E4 /* TweetRowTableCell.swift */,
 				FCC186561AFE982F005A63E4 /* HamburgerTableView.swift */,
+				FCC1865A1B017A00005A63E4 /* ProfileTweetRowTableCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				FCAE09381AF59D4A0086F5DC /* User.swift in Sources */,
 				FCC1864A1AF86E81005A63E4 /* TweetRowTableCell.swift in Sources */,
 				FCAE093A1AF59D520086F5DC /* Tweet.swift in Sources */,
+				FCC1865B1B017A00005A63E4 /* ProfileTweetRowTableCell.swift in Sources */,
 				FCAE093C1AF5B1290086F5DC /* TweetsViewController.swift in Sources */,
 				FCC1864D1AF88391005A63E4 /* TweetViewController.swift in Sources */,
 				FCAE09131AF57B160086F5DC /* ViewController.swift in Sources */,

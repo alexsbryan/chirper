@@ -13,6 +13,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var tweets: [Tweet]?
     @IBOutlet weak var tableView: UITableView!
     var refreshControl = UIRefreshControl()
+    var user: User?
     
     var hamburgerOpenX: CGFloat?
     var hamburgerCloseX = CGFloat(0.0)
@@ -104,6 +105,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 tweetDetailsViewController.tweet = tweet
             } else if (identifier == "newTweet") {
                 
+            } else if (identifier == "imageToProfileSegue") {
+                let cell = sender as! TweetRowTableCell
+                let indexPath = tableView.indexPathForCell(cell)!
+                
+                let user = tweets![indexPath.row].author
+                
+                let profileViewController = segue.destinationViewController as! ProfileViewController
+                profileViewController.user = user
             }
         }
         

@@ -54,17 +54,19 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-ZJ-qbe">
                                         <rect key="frame" x="0.0" y="65" width="100" height="87"/>
-                                        <state key="normal" title="Home"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waO-QM-txM">
                                         <rect key="frame" x="0.0" y="160" width="100" height="87"/>
                                         <state key="normal" title="Profile"/>
                                         <connections>
-                                            <segue destination="crJ-ez-Xbn" kind="push" id="Qk3-EJ-R3s"/>
+                                            <segue destination="crJ-ez-Xbn" kind="push" identifier="profileView" id="Qk3-EJ-R3s"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.26423519442709031" green="0.58732462234355853" blue="1" alpha="0.20999999999999999" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="w1D-6C-5ia">
                                 <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -85,10 +87,14 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LxZ-xc-Ulb">
                                                     <rect key="frame" x="8" y="8" width="68" height="65"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="68" id="N21-El-QNT"/>
                                                         <constraint firstAttribute="height" constant="65" id="cmb-zC-M3u"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="8RB-05-9jd" appends="YES" id="mvJ-su-vRX"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="This is a little 140 character tweeet asdfsaf sfdsafdasdf asfasdfasdf" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jba-Af-gci">
                                                     <rect key="frame" x="84" y="27" width="193" height="51"/>
@@ -173,8 +179,13 @@
                         <action selector="onViewPanGesture:" destination="L56-ok-Yci" id="h7V-qg-jLq"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="8RB-05-9jd">
+                    <connections>
+                        <segue destination="crJ-ez-Xbn" kind="push" identifier="imageToProfileSegue" id="GiQ-uS-k3l"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1067" y="304"/>
+            <point key="canvasLocation" x="1032" y="146"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="eAM-Yv-QCe">
@@ -224,16 +235,45 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1el-Vu-NTT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1el-Vu-NTT">
                                 <rect key="frame" x="0.0" y="276" width="320" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UnC-Nb-3uN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileTweetCell" rowHeight="88" id="UnC-Nb-3uN" customClass="ProfileTweetRowTableCell" customModule="chirper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UnC-Nb-3uN" id="5rb-5z-wdV">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet tweet tweet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpe-Uo-qVy">
+                                                    <rect key="frame" x="73" y="30" width="214" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-uA-ItB">
+                                                    <rect key="frame" x="8" y="8" width="57" height="59"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cool Guy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7B-4A-l3W">
+                                                    <rect key="frame" x="73" y="8" width="72" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14hr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fz-cc-DRA">
+                                                    <rect key="frame" x="216" y="8" width="89" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="V7B-4A-l3W" id="ydu-6Z-gAm"/>
+                                            <outlet property="profileImage" destination="bq4-uA-ItB" id="b9j-i2-0Z7"/>
+                                            <outlet property="timeStampLabel" destination="6Fz-cc-DRA" id="vjV-rS-ljf"/>
+                                            <outlet property="tweetLabel" destination="Tpe-Uo-qVy" id="ito-Dk-TCK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -259,10 +299,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="c4L-6g-P9H"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="GXv-rb-hnV" id="rkY-RC-r5o"/>
+                        <outlet property="followerCountLabel" destination="VIA-Re-ghl" id="gaX-43-LTO"/>
+                        <outlet property="followingCountLabel" destination="15b-22-ew5" id="fxg-wT-p5Q"/>
+                        <outlet property="handleLabel" destination="3FF-6J-HSX" id="0Ws-1y-59j"/>
+                        <outlet property="nameLabel" destination="EUf-7B-hqS" id="DnD-Vq-RZV"/>
+                        <outlet property="profileImage" destination="42k-7C-eVP" id="spf-J4-Lei"/>
+                        <outlet property="tableView" destination="1el-Vu-NTT" id="Y60-xf-E58"/>
+                        <outlet property="tweetCountLabel" destination="ZRh-fy-cLe" id="9SF-TH-1de"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syb-3D-yTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="943"/>
+            <point key="canvasLocation" x="607" y="-297"/>
         </scene>
         <!--Tweet View Controller-->
         <scene sceneID="GKc-Qq-PgR">
@@ -424,4 +474,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="GiQ-uS-k3l"/>
+    </inferredMetricsTieBreakers>
 </document>

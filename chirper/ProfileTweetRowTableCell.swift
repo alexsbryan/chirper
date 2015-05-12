@@ -1,29 +1,27 @@
 //
-//  TweetRowTableCell.swift
+//  ProfileTweetRowTableCell.swift
 //  chirper
 //
-//  Created by Alex & Chelsea Bryan on 5/4/15.
+//  Created by Alex & Chelsea Bryan on 5/11/15.
 //  Copyright (c) 2015 Alex. All rights reserved.
 //
 
 import UIKit
 
-class TweetRowTableCell: UITableViewCell {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var timeStampLabel: UILabel!
+class ProfileTweetRowTableCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var timeStampLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
-        tweetLabel.preferredMaxLayoutWidth = tweetLabel.frame.size.width
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -36,6 +34,5 @@ class TweetRowTableCell: UITableViewCell {
         profileImage.setImageWithURL(NSURL(string: imageUrl))
         }
     }
-    
 
 }
