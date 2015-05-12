@@ -2,7 +2,7 @@
 
 This is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: `<10>`
+Time spent: `<17>`
 
 ### Features
 
@@ -17,6 +17,11 @@ Time spent: `<10>`
 - [x] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 - [x] User can retweet, favorite, and reply to the tweet directly from the timeline feed.
 
+Part 2
+- [x] Hamburger Menu
+- [x] Profile Page
+- [x] Image on home feed links to profile page
+
 #### Optional
 
 - [ ] When composing, you should have a countdown in the upper right for the tweet limit.
@@ -29,3 +34,7 @@ Time spent: `<10>`
 ### Walkthrough
 
 ![Video Walkthrough](walkthrough.gif)
+
+
+### Walkthrough Pt. 2
+![Video Walkthrough](walkthrough2.gif)
